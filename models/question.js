@@ -8,7 +8,8 @@ var question = new Schema ({
 	question: String,
 	trueAnswer: String,
 	secondAnswer: String,
-	thirdAnswer: String
+	thirdAnswer: String,
+	type: String
 });
 
 

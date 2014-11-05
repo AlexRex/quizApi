@@ -1,29 +1,33 @@
 <!doctype html>
-<html lang="en" ng-app="angularTodo">
+<html lang="en" ng-app="angularQuestions">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Angular TODO app</title>
+	<title>App quiz Android</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
 </head>
 <body ng-controller="mainController">
 	<div class="container">
 		<!--Cabecera-->
 		<div class="jumbotron text-center">
-			<h1>Angular TODO List <span class="label label-info">{{ todos.length }}</span></h1>
+			<h1>App quiz Android <span class="label label-info">{{ questions.length }}</span></h1>
 		</div>
 
 		<!--Lista de Todos-->
-		<!--<div id="todo-list" class="row">
+		<div id="question-list" class="row">
 			<div class="col-sm-4 col-sm-offset-4">
-				<div class="checkbox" ng-repeat="todo in todos">
+				<div class="checkbox" ng-repeat="question in questions">
 					<label>
-						<input type="checkbox" ng-click="deleteTodo(todo._id)"> 
-						{{ todo.text }}
+						<input type="checkbox" ng-click="deleteTodo(question._id)"> 
+						A: {{ question.question + '?' }} <br>
+						T: {{ question.trueAnswer }} <br>
+						S: {{question.secondAnswer}} <br>
+						Th: {{question.thirdAnswer}} <br>
+						Ty: {{question.type}}
 					</label>
 				</div>
 			</div>
-		</div>-->
+		</div>
 
 		<!--Formulario para insertar nueva Question-->
 		<div id="question-form" class="row">
@@ -32,16 +36,25 @@
 					<div class="form-group">
 						<input type="text" class="form-control input-lg text-center" 
 								placeholder="Inserta una pregunta nueva"
-								ng-model="formData.text">
+								ng-model="formData.question" required><br>
 						<input type="text" class="form-control input-lg text-center" 
 								placeholder="Inserta la respuesta correcta"
-								ng-model="formData.text">
+								ng-model="formData.trueAnswer" required><br>
 						<input type="text" class="form-control input-lg text-center" 
 								placeholder="Inserta una segunda respuesta"
-								ng-model="formData.text">
+								ng-model="formData.secondAnswer" required><br>
 						<input type="text" class="form-control input-lg text-center" 
 								placeholder="Inserta una tercera respuesta"
-								ng-model="formData.text">
+								ng-model="formData.thirdAnswer" required><br>
+						<select name="type" class="form-control input-lg text-center"
+								ng-model="formData.typeAnswer">
+							<option value="sports">Sports</option>
+							<option value="science">Science</option>
+							<option value="history">History</option>
+							<option value="arts">Arts</option>
+							<option value="geography">Geography</option>
+							<option value="maths">Maths</option>
+						</select><br>
 					</div>
 					<button class="btn btn-primary btn-lg" ng-click="createQuestion()">Añadir</button>
 				</form>

@@ -13,13 +13,6 @@ var session = require('express-session');
 var configDB = require('./config/database.js')(mongoose);
 
 
-// Conexión con la base de datos
-//mongoose.connect('mongodb://localhost:27017/androidQuizApi');
-
-// Definición de modelos
-/*var Todo = mongoose.model('Todo', {
-	text: String
-});*/
 
 var app = express();
 var port = process.env.PORT || 2000;

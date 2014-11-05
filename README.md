@@ -1,3 +1,5 @@
-Angular TODO
+API for Quiz Game
 ============
-Simple TODO web application based in MEAN (Mongo, Express, Angular, Node) stack
+Simple API web application based in MEAN (Mongo, Express, Angular, Node) stack for a quiz game. 
+
+Tutorial incoming.
